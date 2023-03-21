@@ -24,6 +24,13 @@ Resources:
               SSEAlgorithm: AES256
       VersioningConfiguration:
         Status: Enabled
+      ObjectLockEnabled: true
+      ObjectLockConfiguration:
+        ObjectLockEnabled: Enabled
+        Rule:
+          DefaultRetention:
+            Days: 90
+            Mode: GOVERNANCE
 
   CloudTrailBucketPolicy:
     OrganizationBinding: !Ref LogArchiveBinding

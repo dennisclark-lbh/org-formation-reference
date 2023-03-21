@@ -7,7 +7,7 @@ PasswordPolicy:
   StackName: !Sub '${resourcePrefix}-password-policy'
   MaxConcurrentStacks: 10
   Parameters:
-    minimumPasswordLength: 24
+    minimumPasswordLength: 20
   DefaultOrganizationBinding:
     IncludeMasterAccount: true
     Account: '*'

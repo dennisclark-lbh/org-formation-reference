@@ -19,7 +19,6 @@ Organization:
     Type: OC::ORG::OrganizationRoot
     Properties:
       DefaultOrganizationAccessRoleName: OrganizationAccountAccessRole
-      DefaultBuildAccessRoleName: OrganizationFormationBuildAccessRole
 
   # Organizational Unit used for Production workloads
   ProdOu:
@@ -41,7 +40,6 @@ Organization:
     Properties:
       OrganizationalUnitName: shared
       Accounts:
-        - !Ref OrgBuildAccount
         - !Ref SecurityAccount
         - !Ref LogArchiveAccount
 
@@ -71,13 +69,3 @@ Organization:
       Tags:
         budget-alarm-threshold: 200
         budget-alarm-threshold-email-recipient: log-archive@{{email-domain}}
-
-  OrgBuildAccount:
-    Type: OC::ORG::Account
-    Properties:
-      Alias: '{{organization-name}}-org-build'
-      AccountName: Organization Build Account
-      RootEmail: aws+org-build@{{email-domain}}
-      Tags:
-        budget-alarm-threshold: 200
-        budget-alarm-threshold-email-recipient: me@{{email-domain}}
