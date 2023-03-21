@@ -7,7 +7,6 @@ OrganizationUpdate:
 
 Types:
   Type: include
-  DependsOn: OrganizationBuild
   Path: ./templates/005-types/_tasks.yml
 
 SeviceControlPolicies:
